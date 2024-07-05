@@ -1,4 +1,4 @@
-import { handleError } from '../../utils/error/errorHandler.js';
+import { handleError } from '../utils/error/errorHandler.js';
 import { removeUser } from '../session/user.session.js';
 
 export const onError = (socket) => (err) => {
