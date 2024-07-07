@@ -1,11 +1,12 @@
-import { gameSessions, userSessions } from '../session/sessions.js';
 import { removeUser } from '../session/user.session.js';
+import { getGameSession } from '../session/game.session.js';
 
-export const onEnd = (socket) => () => {
+export const onEnd = (socket) => async () => {
   console.log('클라이언트 연결이 종료되었습니다.');
 
-  // console.log(userSessions);
-  // console.log(gameSessions);
+  // 세션에서 유저 삭제
+  await removeUser(socket);
 
-  removeUser(socket);
+  const gameSession = getGameSession();
+  gameSession.removeUser(socket);
 };
