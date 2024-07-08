@@ -14,7 +14,7 @@ const initialHandler = async ({ socket, userId, payload }) => {
 
     // 유저 정보 응답 생성
     const initialResponse = createResponse(HANDLER_IDS.INITIAL, RESPONSE_SUCCESS_CODE, {
-      userId: user.id,
+      userId: deviceId,
     });
 
     socket.write(initialResponse);
