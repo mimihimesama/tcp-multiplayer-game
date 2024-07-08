@@ -2,7 +2,7 @@ import { userSessions } from './sessions.js';
 import User from '../classes/models/user.class.js';
 
 export const addUser = (socket, uuid, playerId, latency) => {
-  const user = new User(uuid, socket, playerId, latency);
+  const user = new User(socket, uuid, playerId, latency);
   userSessions.push(user);
   return user;
 };
